@@ -101,6 +101,11 @@ Cleaned and analyzed 190K+ Texas crash records, then trained Random Forest and L
 Playable Connect Four against an AI using Minimax with alpha-beta pruning and a custom defensive evaluation function. Logs nodes expanded, move time, and memory use per game.
 **Stack:** Python, Pygame
 
+### [Real-Time Playing Card Recognition](https://github.com/Da125673/CS4337FinalPoject)
+Computer Vision course project (team of two) that recognizes playing cards from a live webcam feed, built two ways and compared: a single-stage YOLOv8 model that detects and classifies in one pass, and a two-stage pipeline that pairs a YOLOv8 detector with ResNet-18 rank and suit classifiers. I owned the single-stage pipeline: converting VOC annotations to YOLO format and remapping labels to a 52-card class map, fine-tuning YOLOv8n, writing the per-image evaluation and confusion matrix, and building the OpenCV webcam demo (about 30 FPS). Main finding: classification was reliable once a card was found, and small-object detection in real footage was the bottleneck.
+**Stack:** Python, PyTorch, Ultralytics YOLOv8, OpenCV, scikit-learn
+
+
 ---
 
 ## Skills
