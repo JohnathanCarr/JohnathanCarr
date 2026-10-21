@@ -9,7 +9,9 @@ Full-stack engineer focused on AI-backed products: RAG pipelines, mobile and web
 ## Work at Bear Creek AI (Feb 2026 – Jul 2026)
 
 Full-Stack Engineer I on KnowledgeXpert, a RAG platform for searching regulatory and technical documents. The code lives in private company repositories, so this section describes what I built rather than linking to it. No proprietary code or configuration is included here.
+
 Contribution activity on my Bear Creek AI work account (private repos), Mar–Jul 2026:
+
 <img width="1079" height="498" alt="image" src="https://github.com/user-attachments/assets/6118b105-dac5-4c55-a936-746c41067fc2" />
 
 
