@@ -1,6 +1,6 @@
 # Johnathan Carrizales
 
-Full-stack engineer focused on AI-backed products: RAG pipelines, mobile and web apps, and the automation that keeps them running. B.S. Computer Science (Math minor), Texas State University, Magna Cum Laude.
+Full-stack engineer who builds AI-backed products and the automation around them: scheduled GitHub Actions pipelines, multi-environment deploys, and RAG systems, plus the web and mobile apps on top. I use Claude for AI-assisted development and check its output with tests and evals before merging. B.S. Computer Science (Math minor), Texas State University, Magna Cum Laude.
 
 [LinkedIn](https://linkedin.com/in/johnathanECarr) · JohnathanE.Carrizales@gmail.com
 
@@ -12,9 +12,7 @@ Full-Stack Engineer I on KnowledgeXpert, a RAG platform for searching regulatory
 
 Contribution activity on my Bear Creek AI work account (private repos), Mar–Jul 2026:
 
-<img width="1079" height="498" alt="image" src="https://github.com/user-attachments/assets/6118b105-dac5-4c55-a936-746c41067fc2" />
-
-
+<img width="1079" height="498" alt="GitHub contribution graph: 328 contributions, Mar–Jul 2026" src="https://github.com/user-attachments/assets/6118b105-dac5-4c55-a936-746c41067fc2" />
 
 ### Automated knowledge-base update pipeline (GitHub Actions)
 **Problem:** Regulatory sources publish new documents on their own schedules, and the knowledge bases were going stale between manual refreshes.
@@ -27,6 +25,17 @@ Contribution activity on my Bear Creek AI work account (private repos), Mar–Ju
 - Local test path that exercises detection and download without touching production
 
 **Stack:** Python, GitHub Actions, Docker, Infisical, MongoDB
+
+### Marketplace monorepo extraction and deployment
+**Problem:** The marketplace shared repositories with two unrelated services, so local setup pulled in everything and deploys were coupled.
+
+**What I built:** Extracted it into a standalone monorepo housing both its frontend and backend.
+- Local setup reduced to the marketplace's own dependencies
+- Independent deploys: frontend on Cloudflare Pages, backend on Koyeb, each with production and preview environments
+- Environment-specific configuration, including private npm package auth in both environments and a dev-only auth bypass gated by environment
+- Built a deep-link flow that pre-selects a knowledge base when a user arrives from the marketplace (4 PRs across 3 repos)
+
+**Stack:** React, Vite, Node.js, Cloudflare Pages, Koyeb
 
 ### Production RAG ingestion and retrieval pipeline
 **Problem:** Each new knowledge base was built by hand, slowly and inconsistently.
@@ -53,17 +62,6 @@ Contribution activity on my Bear Creek AI work account (private repos), Mar–Ju
 
 **Stack:** React Native (New Architecture), TypeScript, Kotlin, Node.js
 
-### Marketplace monorepo extraction and deployment
-**Problem:** The marketplace shared repositories with two unrelated services, so local setup pulled in everything and deploys were coupled.
-
-**What I built:** Extracted it into a standalone monorepo housing both its frontend and backend.
-- Local setup reduced to the marketplace's own dependencies
-- Independent deploys: frontend on Cloudflare Pages, backend on Koyeb, each with production and preview environments
-- Environment-specific configuration, including private npm package auth in both environments and a dev-only auth bypass gated by environment
-- Built a deep-link flow that pre-selects a knowledge base when a user arrives from the marketplace (4 PRs across 3 repos)
-
-**Stack:** React, Vite, Node.js, Cloudflare Pages, Koyeb
-
 ### Role-based access control migration
 **Problem:** Access was controlled by a single boolean flag, and knowledge-base access rules were hardcoded.
 
@@ -82,6 +80,12 @@ Built 25+ scrapers that collected product documentation from industrial electric
 ### LLM and vector database cost analysis
 Wrote a unit-economics report for the VP of Engineering covering parsing (LlamaParse), storage (Azure), and vector database (Pinecone) costs, with per-file and per-page breakdowns and projections for upcoming knowledge bases.
 
+### How I work
+- Sprint ceremonies with work tracked in Jira; reviewed teammates' pull requests and shipped my own changes through PRs, including coordinated changes across several repositories
+- Wrote technical documentation for the systems I built
+- Worked directly with clients to turn their requirements into buildable solutions
+- Handled password hashing, JWT auth, and user PII as part of normal feature work
+
 ---
 
 ## Personal projects
@@ -93,6 +97,10 @@ Chrome extension (Manifest V3) that tailors a user's own resume to a job posting
 
 **Stack:** JavaScript, Chrome Extensions (MV3), OpenAI API, pdf.js, jsPDF, node:test
 
+### [Real-Time Playing Card Recognition](https://github.com/Da125673/CS4337FinalPoject)
+Computer Vision course project (team of two) that recognizes playing cards from a live webcam feed, built two ways and compared: a single-stage YOLOv8 model that detects and classifies in one pass, and a two-stage pipeline that pairs a YOLOv8 detector with ResNet-18 rank and suit classifiers. I owned the single-stage pipeline: converting VOC annotations to YOLO format and remapping labels to a 52-card class map, fine-tuning YOLOv8n, writing the per-image evaluation and confusion matrix, and building the OpenCV webcam demo (about 30 FPS). Main finding: classification was reliable once a card was found, and small-object detection in real footage was the bottleneck.
+**Stack:** Python, PyTorch, Ultralytics YOLOv8, OpenCV, scikit-learn
+
 ### Crash Severity Prediction
 Cleaned and analyzed 190K+ Texas crash records, then trained Random Forest and Logistic Regression models to infer severity for crashes recorded as unknown. Reduced false negatives by 60%, evaluated with precision-recall curves and F1.
 **Stack:** Python, Pandas, scikit-learn, TensorFlow
@@ -100,11 +108,6 @@ Cleaned and analyzed 190K+ Texas crash records, then trained Random Forest and L
 ### [Connect Four AI](https://github.com/JohnathanCarr/minimax-connect4)
 Playable Connect Four against an AI using Minimax with alpha-beta pruning and a custom defensive evaluation function. Logs nodes expanded, move time, and memory use per game.
 **Stack:** Python, Pygame
-
-### [Real-Time Playing Card Recognition](https://github.com/Da125673/CS4337FinalPoject)
-Computer Vision course project (team of two) that recognizes playing cards from a live webcam feed, built two ways and compared: a single-stage YOLOv8 model that detects and classifies in one pass, and a two-stage pipeline that pairs a YOLOv8 detector with ResNet-18 rank and suit classifiers. I owned the single-stage pipeline: converting VOC annotations to YOLO format and remapping labels to a 52-card class map, fine-tuning YOLOv8n, writing the per-image evaluation and confusion matrix, and building the OpenCV webcam demo (about 30 FPS). Main finding: classification was reliable once a card was found, and small-object detection in real footage was the bottleneck.
-**Stack:** Python, PyTorch, Ultralytics YOLOv8, OpenCV, scikit-learn
-
 
 ---
 
@@ -115,5 +118,5 @@ Computer Vision course project (team of two) that recognizes playing cards from 
 - **Backend:** Node.js, Express, FastAPI, REST APIs, JWT auth, RBAC
 - **Databases:** MongoDB (Atlas, PyMongo), Pinecone, Atlas Vector Search
 - **AI/ML:** OpenAI API, LangChain, Cohere Rerank, RAG, scikit-learn, TensorFlow, PyTorch
-- **DevOps & Cloud:** GitHub Actions, Docker, Azure Blob Storage, Cloudflare Pages, Koyeb, Infisical
+- **DevOps & Cloud:** GitHub Actions (YAML workflows), Docker, Azure Blob Storage, Cloudflare Pages, Koyeb, Infisical
 - **Tools:** Git/GitHub, Jira, VS Code, Claude for AI-assisted development
